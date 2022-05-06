@@ -1,6 +1,6 @@
-import Command from "../../classes/Command";
-import CommandContext from "../../classes/CommandContext";
-import Client from "../../classes/Client";
+import Command from "@avoid/classes/Command";
+import CommandContext from "@avoid/classes/CommandContext";
+import Client from "@avoid/classes/Client";
 import { Message } from "discord.js";
 
 export default class PingCommand extends Command {

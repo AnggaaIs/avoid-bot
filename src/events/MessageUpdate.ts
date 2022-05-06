@@ -1,9 +1,8 @@
 import { Message, TextChannel } from "discord.js";
-import Client from "../classes/Client";
-import Event from "../classes/Event";
-import { toTitleCase } from "../utils";
-import { Colors } from "../utils/Constants";
-import CustomEmbed from "../classes/CustomEmbed";
+import Client from "@avoid/classes/Client";
+import Event from "@avoid/classes/Event";
+import { Colors } from "@avoid/utils/Constants";
+import CustomEmbed from "@avoid/classes/CustomEmbed";
 
 export default class MessageUpdateEvent extends Event {
   public constructor(protected client: Client) {
@@ -33,11 +32,11 @@ export default class MessageUpdateEvent extends Event {
     if (!eventData.status) return;
 
     if (oContent.length > 1015) {
-      oContent = oContent.substring(0, 1015) + ".....";
+      oContent = oContent.substring(0, 1015) + "@avoid.";
     }
 
     if (nContent.length > 1015) {
-      nContent = nContent.substring(0, 1015) + ".....";
+      nContent = nContent.substring(0, 1015) + "@avoid.";
     }
 
     const embed = new CustomEmbed()

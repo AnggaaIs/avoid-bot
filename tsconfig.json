@@ -14,7 +14,10 @@
     "noUnusedLocals": false,
     "noImplicitAny": false,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "paths": {
+      "@avoid/*": ["src/*"]
+    }
   },
   "include": ["src/**/*", "src/**/*.json"],
   "exclude": ["node_modules", "dist"]

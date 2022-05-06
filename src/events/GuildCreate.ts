@@ -1,5 +1,5 @@
-import Client from "../classes/Client";
-import Event from "../classes/Event";
+import Client from "@avoid/classes/Client";
+import Event from "@avoid/classes/Event";
 import { Guild } from "discord.js";
 
 export default class GuildCreateEvent extends Event {

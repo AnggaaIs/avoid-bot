@@ -1,5 +1,5 @@
 import { ClientOptions, Intents } from "discord.js";
-import Client from "./classes/Client";
+import Client from "@avoid/classes/Client";
 
 const client = new Client({
   allowedMentions: {

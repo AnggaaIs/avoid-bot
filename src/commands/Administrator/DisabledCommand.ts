@@ -1,11 +1,11 @@
-import Command from "../../classes/Command";
-import CommandContext from "../../classes/CommandContext";
-import Client from "../../classes/Client";
+import Command from "@avoid/classes/Command";
+import CommandContext from "@avoid/classes/CommandContext";
+import Client from "@avoid/classes/Client";
 import { Message } from "discord.js";
 import { ApplicationCommandOptionTypes } from "discord.js/typings/enums";
-import { toTitleCase } from "../../utils";
-import { Colors } from "../../utils/Constants";
-import CustomEmbed from "../../classes/CustomEmbed";
+import { toTitleCase } from "@avoid/utils";
+import { Colors } from "@avoid/utils/Constants";
+import CustomEmbed from "@avoid/classes/CustomEmbed";
 
 const ignoredCommand = ["disablecommand", "help"];
 

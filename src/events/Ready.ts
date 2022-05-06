@@ -1,5 +1,5 @@
-import Client from "../classes/Client";
-import Event from "../classes/Event";
+import Client from "@avoid/classes/Client";
+import Event from "@avoid/classes/Event";
 
 export default class ReadyEvent extends Event {
   public constructor(protected client: Client) {

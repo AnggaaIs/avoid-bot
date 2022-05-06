@@ -1,7 +1,7 @@
-import GuildModel from "../database/models/Guild";
-import UserModel from "../database/models/User";
+import GuildModel from "@avoid/database/models/Guild";
+import UserModel from "@avoid/database/models/User";
 import mongoose from "mongoose";
-import Client from "../classes/Client";
+import Client from "@avoid/classes/Client";
 
 export class DatabaseService {
   public guild: typeof GuildModel = GuildModel;

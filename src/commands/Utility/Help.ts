@@ -1,13 +1,13 @@
-import Command from "../../classes/Command";
-import CommandContext from "../../classes/CommandContext";
-import Client from "../../classes/Client";
+import Command from "@avoid/classes/Command";
+import CommandContext from "@avoid/classes/CommandContext";
+import Client from "@avoid/classes/Client";
 import { EmbedFieldData, Message, MessageActionRow, MessageButton, MessageSelectMenu, MessageSelectOptionData } from "discord.js";
 import { ApplicationCommandOptionTypes } from "discord.js/typings/enums";
-import { Colors } from "../../utils/Constants";
-import CustomEmbed from "../../classes/CustomEmbed";
+import { Colors } from "@avoid/utils/Constants";
+import CustomEmbed from "@avoid/classes/CustomEmbed";
 import { readdirSync } from "fs";
 import { join } from "path";
-import { toTitleCase } from "../../utils";
+import { toTitleCase } from "@avoid/utils";
 
 export default class HelpCommand extends Command {
   public constructor(protected client: Client) {
@@ -150,7 +150,7 @@ export default class HelpCommand extends Command {
 }
 
 function readCategory(): any {
-  const folder = readdirSync(join(__dirname, "../../commands"));
+  const folder = readdirSync(join(__dirname, "@avoid/commands"));
   const category: string[] = [];
   const selectMenuOptionData: MessageSelectOptionData[] = [];
 

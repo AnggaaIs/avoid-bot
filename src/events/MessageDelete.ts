@@ -1,9 +1,8 @@
 import { Message, TextChannel } from "discord.js";
-import Client from "../classes/Client";
-import Event from "../classes/Event";
-import { toTitleCase } from "../utils";
-import { Colors } from "../utils/Constants";
-import CustomEmbed from "../classes/CustomEmbed";
+import Client from "@avoid/classes/Client";
+import Event from "@avoid/classes/Event";
+import { Colors } from "@avoid/utils/Constants";
+import CustomEmbed from "@avoid/classes/CustomEmbed";
 
 export default class MessageDeleteEvent extends Event {
   public constructor(protected client: Client) {

@@ -1,10 +1,10 @@
-import Client from "../classes/Client";
-import Event from "../classes/Event";
+import Client from "@avoid/classes/Client";
+import Event from "@avoid/classes/Event";
 import { Interaction, TextChannel, Message, PermissionString } from "discord.js";
-import CommandContext from "../classes/CommandContext";
-import Command from "../classes/Command";
+import CommandContext from "@avoid/classes/CommandContext";
+import Command from "@avoid/classes/Command";
 import Collection from "@discordjs/collection";
-import { toTitleCase } from "../utils";
+import { toTitleCase } from "@avoid/utils";
 
 export default class InteractionCreateEvent extends Event {
   public constructor(protected client: Client) {

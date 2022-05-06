@@ -1,19 +1,11 @@
-import Command from "../../classes/Command";
-import CommandContext from "../../classes/CommandContext";
-import Client from "../../classes/Client";
-import {
-  EmbedFieldData,
-  GuildBasedChannel,
-  Message,
-  MessageActionRow,
-  MessageButton,
-  MessageSelectMenu,
-  MessageSelectOptionData,
-} from "discord.js";
+import Command from "@avoid/classes/Command";
+import CommandContext from "@avoid/classes/CommandContext";
+import Client from "@avoid/classes/Client";
+import { EmbedFieldData, Message, MessageActionRow, MessageButton, MessageSelectMenu, MessageSelectOptionData } from "discord.js";
 import { ApplicationCommandOptionTypes } from "discord.js/typings/enums";
-import { toTitleCase } from "../../utils";
-import { Colors } from "../../utils/Constants";
-import CustomEmbed from "../../classes/CustomEmbed";
+
+import { Colors } from "@avoid/utils/Constants";
+import CustomEmbed from "@avoid/classes/CustomEmbed";
 
 const LogsList = [
   {
@@ -22,6 +14,10 @@ const LogsList = [
   },
   {
     name: "Message Update",
+    status: false,
+  },
+  {
+    name: "Message Delete Bulk",
     status: false,
   },
 ];

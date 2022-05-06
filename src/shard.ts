@@ -1,5 +1,5 @@
 import { ShardingManager, ShardingManagerOptions } from "discord.js";
-import config from "./utils/config";
+import config from "@avoid/utils/config";
 
 const isProduction = process.env.NODE_ENV === "production";
 

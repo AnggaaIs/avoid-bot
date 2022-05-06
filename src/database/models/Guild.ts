@@ -1,7 +1,7 @@
 import { model, Schema } from "mongoose";
-import { GuildModels } from "../../interfaces";
+import { GuildModels } from "@avoid/interfaces";
 
-import config from "../../utils/config";
+import config from "@avoid/utils/config";
 
 const GuildSchema = new Schema<GuildModels>({
   id: { required: true, type: String },

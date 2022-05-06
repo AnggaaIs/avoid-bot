@@ -1,11 +1,11 @@
-import Command from "../../classes/Command";
-import CommandContext from "../../classes/CommandContext";
-import Client from "../../classes/Client";
+import Command from "@avoid/classes/Command";
+import CommandContext from "@avoid/classes/CommandContext";
+import Client from "@avoid/classes/Client";
 import { ColorResolvable, EmbedFieldData, Message, User } from "discord.js";
 import { ApplicationCommandOptionTypes } from "discord.js/typings/enums";
-import { Colors, UserFlagEmojis } from "../../utils/Constants";
-import { toTitleCase } from "../../utils";
-import CustomEmbed from "../../classes/CustomEmbed";
+import { Colors, UserFlagEmojis } from "@avoid/utils/Constants";
+import { toTitleCase } from "@avoid/utils";
+import CustomEmbed from "@avoid/classes/CustomEmbed";
 
 export default class UserInfoCommand extends Command {
   public constructor(protected client: Client) {

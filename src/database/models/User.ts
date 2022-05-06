@@ -1,7 +1,7 @@
 import { model, Schema } from "mongoose";
-import { UserModels } from "../../interfaces";
+import { UserModels } from "@avoid/interfaces";
 
-import config from "../../utils/config";
+import config from "@avoid/utils/config";
 
 const UserSchema = new Schema<UserModels>({
   id: { required: true, type: String },
