@@ -1,0 +1,39 @@
+{
+  "name": "avoid",
+  "description": "Avoid - Multipurpose discord bot.",
+  "version": "0.1.13",
+  "main": "dist/shard.js",
+  "license": "GPL-3.0",
+  "scripts": {
+    "build": "rimraf dist && tsc --project tsconfig.json",
+    "prod": "yarn run build && cross-env NODE_ENV=production node ./dist/shard.js",
+    "dev": "nodemon",
+    "pm2:start": "yarn run build && pm2 start ecosystem.config.js",
+    "format": "prettier --write ."
+  },
+  "engines": {
+    "node": ">=16.6.0",
+    "npm": ">=7.0.0"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "chalk": "4.1.0",
+    "discord-api-types": "^0.30.0",
+    "discord.js": "^13.6.0",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.8",
+    "pretty-ms": "^7.0.1",
+    "winston": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.15",
+    "pm2": "^5.2.0",
+    "prettier": "^2.6.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "tsconfig-paths": "^3.14.0",
+    "typescript": "^4.6.2"
+  }
+}

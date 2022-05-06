@@ -1,0 +1,7 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/", "dist/"],
+  "watch": ["src"],
+  "exec": "cross-env NODE_ENV=development ts-node --typeCheck -r tsconfig-paths/register --files ./src/app.ts",
+  "ext": "ts"
+}
