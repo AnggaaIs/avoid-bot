@@ -3,27 +3,12 @@ import CommandContext from "@avoid/classes/CommandContext";
 import Client from "@avoid/classes/Client";
 import { EmbedFieldData, Message, MessageActionRow, MessageButton, MessageSelectMenu, MessageSelectOptionData } from "discord.js";
 import { ApplicationCommandOptionTypes } from "discord.js/typings/enums";
-
+import { DefaultLogsList } from "@avoid/utils/Constants";
 import { Colors } from "@avoid/utils/Constants";
 import CustomEmbed from "@avoid/classes/CustomEmbed";
 
-const LogsList = [
-  {
-    name: "Message Delete",
-    status: false,
-  },
-  {
-    name: "Message Update",
-    status: false,
-  },
-  {
-    name: "Message Delete Bulk",
-    status: false,
-  },
-];
-
 const getLogsForDefault = async (ctx: CommandContext, client: Client) => {
-  await client.database.guild.findOneAndUpdate({ id: ctx.interaction.guildId }, { logs: { list: LogsList.sort() } });
+  await client.database.guild.findOneAndUpdate({ id: ctx.interaction.guildId }, { logs: { list: DefaultLogsList.sort() } });
 
   const guildData = await client.database.guild.findOne({ id: ctx.interaction.guildId });
 
@@ -89,10 +74,10 @@ export default class LogsCommand extends Command {
     const firstFieldData: EmbedFieldData[] = [];
 
     if (guildData && !logsData?.list) {
-      const logsList = await getLogsForDefault(ctx, this.client);
+      const DefaultLogsList = await getLogsForDefault(ctx, this.client);
 
-      for (let i = 0; i < logsList.length; i++) {
-        const log = logsList[i];
+      for (let i = 0; i < DefaultLogsList.length; i++) {
+        const log = DefaultLogsList[i];
         firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "Active" : "Not active"}` });
       }
     } else {
@@ -183,7 +168,7 @@ export default class LogsCommand extends Command {
         const values = interaction["values"][0];
         const guildData = await this.client.database.guild.findOne({ id: guild.id });
 
-        LogsList.forEach(async (a) => {
+        DefaultLogsList.forEach(async (a) => {
           if (values === a.name) {
             const guildData1 = await this.client.database.guild.findOne({ id: guild.id });
             const actionData = guildData1.logs.list.find((x) => x.name === values);

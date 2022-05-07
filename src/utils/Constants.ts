@@ -28,6 +28,29 @@ export const PremiumGuildLevel = {
   TIER_3: "3",
 };
 
+export const DefaultLogsList = [
+  {
+    name: "Message Delete",
+    status: false,
+  },
+  {
+    name: "Message Update",
+    status: false,
+  },
+  {
+    name: "Message Delete Bulk",
+    status: false,
+  },
+  {
+    name: "Guild Ban Add",
+    status: false,
+  },
+  {
+    name: "Guild Ban Remove",
+    status: false,
+  },
+];
+
 Object.freeze(Colors);
 Object.freeze(UserFlagEmojis);
 Object.freeze(PremiumGuildLevel);
