@@ -74,10 +74,10 @@ export default class LogsCommand extends Command {
     const firstFieldData: EmbedFieldData[] = [];
 
     if (guildData && !logsData?.list) {
-      const DefaultLogsList = await getLogsForDefault(ctx, this.client);
+      const logsList = await getLogsForDefault(ctx, this.client);
 
-      for (let i = 0; i < DefaultLogsList.length; i++) {
-        const log = DefaultLogsList[i];
+      for (let i = 0; i < logsList.length; i++) {
+        const log = logsList[i];
         firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "Active" : "Not active"}` });
       }
     } else {
