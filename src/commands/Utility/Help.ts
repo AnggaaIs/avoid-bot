@@ -150,7 +150,7 @@ export default class HelpCommand extends Command {
 }
 
 function readCategory(): any {
-  const folder = readdirSync(join(__dirname, "@avoid/commands"));
+  const folder = readdirSync(join(__dirname, "../../commands"));
   const category: string[] = [];
   const selectMenuOptionData: MessageSelectOptionData[] = [];
 

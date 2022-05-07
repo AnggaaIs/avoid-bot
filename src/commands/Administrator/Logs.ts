@@ -214,6 +214,26 @@ export default class LogsCommand extends Command {
             const e = await makeEmbed(ctx, channel, firstFieldData);
 
             await interaction.update({ embeds: [e], components: [row, rowSelectMenu] });
+
+            if (channel === "Not set") {
+              await interaction.channel
+                .send({ content: `:x: | **${interaction.user.tag}**, You need to set a channel first!` })
+                .then((m) => {
+                  setTimeout(() => {
+                    if (m.deletable) m.delete().catch(() => {});
+                  }, 15000);
+                });
+            } else if (channel === "Invalid channel! please switch") {
+              await interaction.channel
+                .send({
+                  content: `:x: | **${interaction.user.tag}**, Channel is currently invalid, please change it first!`,
+                })
+                .then((m) => {
+                  setTimeout(() => {
+                    if (m.deletable) m.delete().catch(() => {});
+                  }, 15000);
+                });
+            }
           }
         });
       }
