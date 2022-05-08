@@ -1,9 +1,9 @@
-name: Lint
+name: Format code and lint
 
 on: [push, pull_request]
 
 jobs:
-  lint:
+  format-lint:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -20,5 +20,8 @@ jobs:
       - name: Install dependencies
         run: yarn --immutable
 
-      - name: Lint
+      - name: Format code
+        run: yarn format
+
+      - name: Lint code
         run: yarn lint:fix
