@@ -52,7 +52,6 @@ export default class NodePackageCommand extends Command {
       const packageName = ctx.interaction.options.getString("package");
       const sources = ctx.interaction.options.getString("sources") ?? "npm";
       const isNpm = sources === "npm" ? true : false;
-      const type = isNpm ? "npmjs" : "yarnpkg";
 
       const r = await makeEmbed(sources as any, ctx, this.client, packageName, true);
 
@@ -105,7 +104,6 @@ export default class NodePackageCommand extends Command {
           sources.forEach(async (a) => {
             if (values.toLowerCase() === a.toLowerCase()) {
               const isNpm = a.toLowerCase() === "npm" ? true : false;
-              const type = isNpm ? "npmjs" : "yarnpkg";
 
               const l = await makeEmbed(a as any, ctx, this.client, packageName);
               if (!l) return;

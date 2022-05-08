@@ -1,4 +1,4 @@
-import { ColorResolvable, UserFlags } from "discord.js";
+import { ColorResolvable } from "discord.js";
 
 export const Colors = {
   general: "#ffffff" as ColorResolvable,

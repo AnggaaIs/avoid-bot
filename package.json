@@ -9,7 +9,9 @@
     "prod": "yarn run build && cross-env NODE_ENV=production node ./dist/shard.js",
     "dev": "nodemon",
     "pm2:start": "yarn run build && pm2 start ecosystem.config.js",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix"
   },
   "engines": {
     "node": ">=16.6.0",
@@ -23,11 +25,16 @@
     "moment": "^2.29.1",
     "mongoose": "^6.2.8",
     "pretty-ms": "^7.0.1",
+    "tiktok-scraper": "^1.4.36",
+    "tiktok-scraper-ts": "^1.2.9",
     "winston": "^3.6.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "cross-env": "^7.0.3",
+    "eslint": "^8.15.0",
     "nodemon": "^2.0.15",
     "pm2": "^5.2.0",
     "prettier": "^2.6.0",

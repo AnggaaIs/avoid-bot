@@ -28,7 +28,7 @@ export default class UserInfoCommand extends Command {
   public async run(ctx: CommandContext): Promise<Message | void> {
     await ctx.interaction.deferReply();
     const user: User = ctx.interaction.options.getUser("user") ?? ctx.interaction.user;
-    let fieldData: EmbedFieldData[] = [];
+    const fieldData: EmbedFieldData[] = [];
 
     if (user.id) fieldData.push({ name: "ID", value: user.id });
     if (user.createdAt) {

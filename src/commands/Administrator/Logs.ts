@@ -57,7 +57,6 @@ export default class LogsCommand extends Command {
   public async run(ctx: CommandContext): Promise<Message | void> {
     await ctx.interaction.deferReply();
     const guild = ctx.interaction.guild;
-    const user = ctx.interaction.user;
 
     const guildData = await this.client.database.guild.findOne({ id: guild.id });
 
@@ -166,7 +165,6 @@ export default class LogsCommand extends Command {
         });
       } else if (customId === "select_action") {
         const values = interaction["values"][0];
-        const guildData = await this.client.database.guild.findOne({ id: guild.id });
 
         DefaultLogsList.forEach(async (a) => {
           if (values === a.name) {

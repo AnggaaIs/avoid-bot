@@ -19,7 +19,7 @@ export default class ServerInfoCommand extends Command {
   public async run(ctx: CommandContext): Promise<Message | void> {
     await ctx.interaction.deferReply();
     const guild = ctx.interaction.guild;
-    let fieldData: EmbedFieldData[] = [];
+    const fieldData: EmbedFieldData[] = [];
     const guildOwner = await this.client.users.fetch(guild.ownerId);
 
     if (guild.id) fieldData.push({ name: "ID", value: guild.id });

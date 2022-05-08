@@ -69,7 +69,7 @@ export default class OrigamiClient extends Client {
     try {
       const isProduction = process.env.NODE_ENV === "production";
 
-      let commandList: Array<ApplicationCommandDataResolvable> = [];
+      const commandList: Array<ApplicationCommandDataResolvable> = [];
 
       let commandsRegister: any;
       if (isProduction) commandsRegister = await this.application.commands.fetch();

@@ -1,4 +1,4 @@
-import { ApplicationCommandOptionData, Message, PermissionString } from "discord.js";
+import { ApplicationCommandOptionData, PermissionString } from "discord.js";
 
 export interface EventOptions {
   name: string;

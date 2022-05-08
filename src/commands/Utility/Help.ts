@@ -52,8 +52,8 @@ export default class HelpCommand extends Command {
 
       const fieldData: EmbedFieldData[] = [];
 
-      let userPerms = cmd.permissions["user"] ?? [];
-      let clientPerms = cmd.permissions["client"] ?? [];
+      const userPerms = cmd.permissions["user"] ?? [];
+      const clientPerms = cmd.permissions["client"] ?? [];
       const userPermString = userPerms.map((x) => `**${toTitleCase(x.replace(/_/g, " "))}**`).join(", ");
       const clientPermString = clientPerms.map((x) => `**${toTitleCase(x.replace(/_/g, " "))}**`).join(", ");
 
@@ -84,7 +84,7 @@ export default class HelpCommand extends Command {
 
       ctx.interaction.followUp({ embeds: [embedHelpA] });
     } else {
-      let text = `> :toolbox: | Utility\n> :shield: | Administrator`;
+      const text = `> :toolbox: | Utility\n> :shield: | Administrator`;
 
       const embedHelp = new CustomEmbed()
         .setColor(Colors.general)
