@@ -49,6 +49,18 @@ export const DefaultLogsList = [
     name: "Guild Ban Remove",
     status: false,
   },
+  {
+    name: "Channel Create",
+    status: false,
+  },
+  {
+    name: "Channel Delete",
+    status: false,
+  },
+  {
+    name: "Channel Update",
+    status: false,
+  },
 ];
 
 Object.freeze(Colors);

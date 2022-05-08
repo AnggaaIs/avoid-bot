@@ -22,6 +22,7 @@
     "chalk": "4.1.0",
     "discord-api-types": "^0.30.0",
     "discord.js": "^13.6.0",
+    "humanize-duration": "^3.27.1",
     "moment": "^2.29.1",
     "mongoose": "^6.2.8",
     "pretty-ms": "^7.0.1",
@@ -30,6 +31,7 @@
     "winston": "^3.6.0"
   },
   "devDependencies": {
+    "@types/humanize-duration": "^3.27.1",
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",

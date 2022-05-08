@@ -8,7 +8,13 @@ import { Colors } from "@avoid/utils/Constants";
 import CustomEmbed from "@avoid/classes/CustomEmbed";
 
 const getLogsForDefault = async (ctx: CommandContext, client: Client) => {
-  await client.database.guild.findOneAndUpdate({ id: ctx.interaction.guildId }, { logs: { list: DefaultLogsList.sort() } });
+  const SortedLogsList = DefaultLogsList.sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+  });
+
+  await client.database.guild.findOneAndUpdate({ id: ctx.interaction.guildId }, { logs: { list: SortedLogsList } });
 
   const guildData = await client.database.guild.findOne({ id: ctx.interaction.guildId });
 
@@ -21,8 +27,10 @@ const getAction = async (ctx: CommandContext, client: Client) => {
   const logsData = guildData.logs;
 
   if (guildData && logsData?.list) {
-    for (let i = 0; i < logsData.list.length; i++) {
-      const d = logsData.list[i];
+    const listLogsData = guildData.logs.list;
+
+    for (let i = 0; i < listLogsData.length; i++) {
+      const d = listLogsData[i];
       menu.push({
         label: d.name,
         value: d.name,
