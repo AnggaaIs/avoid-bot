@@ -23,5 +23,5 @@ jobs:
       - name: Run tests
         run: |
           cp src/utils/config.example.ts src/utils/config.ts
-          yarn test
+          yarn build
           rm -rf dist
