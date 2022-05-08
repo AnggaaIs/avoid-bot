@@ -21,4 +21,7 @@ jobs:
         run: yarn --immutable
 
       - name: Run tests
-        run: yarn build && rm -rf dist
+        run: |
+          cp src/utils/config.example.ts src/utils/config.ts
+          yarn test
+          rm -rf dist
