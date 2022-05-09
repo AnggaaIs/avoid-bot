@@ -61,6 +61,18 @@ export const DefaultLogsList = [
     name: "Channel Update",
     status: false,
   },
+  {
+    name: "Voice Channel Join",
+    status: false,
+  },
+  {
+    name: "Voice Channel Leave",
+    status: false,
+  },
+  {
+    name: "Voice Channel Switch",
+    status: false,
+  },
 ];
 
 Object.freeze(Colors);
