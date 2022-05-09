@@ -1,9 +1,8 @@
 import Client from "@avoid/classes/Client";
 import CustomEmbed from "@avoid/classes/CustomEmbed";
 import Event from "@avoid/classes/Event";
-import { toTitleCase } from "@avoid/utils";
 import { Colors } from "@avoid/utils/Constants";
-import { Message, NonThreadGuildBasedChannel, TextChannel, VoiceState } from "discord.js";
+import { Message, TextChannel, VoiceState } from "discord.js";
 
 export default class VoiceStateUpdateEvent extends Event {
   public constructor(protected client: Client) {
@@ -40,7 +39,7 @@ export default class VoiceStateUpdateEvent extends Event {
       if (!eventData.status) return;
 
       const embed = new CustomEmbed()
-        .setColor(Colors.general)
+        .setColor(Colors.error)
         .setAuthor({ name: member.user.tag, iconURL: member.user.displayAvatarURL() })
         .setDescription(`📤 Left Voice Channel: **${oldState.channel?.name}**`)
         .setTimestamp()

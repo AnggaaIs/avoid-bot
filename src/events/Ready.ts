@@ -12,8 +12,8 @@ export default class ReadyEvent extends Event {
   public async run(): Promise<void> {
     await this.client.syncApplicationCommands();
     this.client.user.setActivity({
-      name: "Avoid",
-      type: 2,
+      name: `${this.client.user.username} | release v${this.client.config.version}`,
+      type: 5,
     });
 
     this.client.log.info(`${this.client.user.tag} Connected to Discord.`);

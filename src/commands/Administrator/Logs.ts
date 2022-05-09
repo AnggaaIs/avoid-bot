@@ -85,12 +85,12 @@ export default class LogsCommand extends Command {
 
       for (let i = 0; i < logsList.length; i++) {
         const log = logsList[i];
-        firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "Active" : "Not active"}` });
+        firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "✅ Active" : "❌ Not active"}` });
       }
     } else {
       for (let i = 0; i < logsData.list.length; i++) {
         const log = logsData.list[i];
-        firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "Active" : "Not active"}` });
+        firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "✅ Active" : "❌ Not active"}` });
       }
     }
 
@@ -156,7 +156,7 @@ export default class LogsCommand extends Command {
 
           for (let i = 0; i < logsData.list.length; i++) {
             const log = logsData.list[i];
-            firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "Active" : "Not active"}` });
+            firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "✅ Active" : "❌ Not active"}` });
           }
 
           let channel;
@@ -191,7 +191,7 @@ export default class LogsCommand extends Command {
 
             for (let i = 0; i < logsData.list.length; i++) {
               const log = logsData.list[i];
-              firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "Active" : "Not active"}` });
+              firstFieldData.push({ name: log.name, value: `> Status: ${log.status ? "✅ Active" : "❌ Not active"}` });
             }
 
             let channel;
@@ -208,7 +208,7 @@ export default class LogsCommand extends Command {
 
             if (channel === "Not set") {
               await interaction.channel
-                .send({ content: `:x: | **${interaction.user.tag}**, You need to set a channel first!` })
+                .send({ content: `❗ | **${interaction.user.tag}**, You need to set a channel first!` })
                 .then((m) => {
                   setTimeout(() => {
                     if (m.deletable) m.delete().catch(() => {});
@@ -217,7 +217,7 @@ export default class LogsCommand extends Command {
             } else if (channel === "Invalid channel! please switch") {
               await interaction.channel
                 .send({
-                  content: `:x: | **${interaction.user.tag}**, Channel is currently invalid, please change it first!`,
+                  content: `❗ | **${interaction.user.tag}**, Channel is currently invalid, please change it first!`,
                 })
                 .then((m) => {
                   setTimeout(() => {

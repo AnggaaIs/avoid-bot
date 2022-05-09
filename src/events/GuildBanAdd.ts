@@ -20,7 +20,7 @@ export default class GuildBanAddEvent extends Event {
     if (!guildData.logs?.channel) return;
     if (!guildData.logs?.list) return;
 
-    const eventData = guildData.logs.list.find((x) => x.name === "Guild Ban Add");
+    const eventData = guildData.logs.list.find((x) => x.name === "Member Ban");
     if (!eventData.status) return;
 
     const embed = new CustomEmbed()

@@ -42,11 +42,11 @@ export const DefaultLogsList = [
     status: false,
   },
   {
-    name: "Guild Ban Add",
+    name: "Member Ban",
     status: false,
   },
   {
-    name: "Guild Ban Remove",
+    name: "Member Unban",
     status: false,
   },
   {
@@ -71,6 +71,30 @@ export const DefaultLogsList = [
   },
   {
     name: "Voice Channel Switch",
+    status: false,
+  },
+  {
+    name: "Member Update",
+    status: false,
+  },
+  {
+    name: "Member Join",
+    status: false,
+  },
+  {
+    name: "Member Leave",
+    status: false,
+  },
+  {
+    name: "Thread Create",
+    status: false,
+  },
+  {
+    name: "Thread Update",
+    status: false,
+  },
+  {
+    name: "Thread Delete",
     status: false,
   },
 ];
